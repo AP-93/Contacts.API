@@ -2,26 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Contacts.API.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Contacts.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class ContactsController : ControllerBase  
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private readonly DataContext _dataContext;
+        public ContactsController(DataContext dataContext)
         {
-            return new string[] { "value1", "value2" };
+            _dataContext = dataContext;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        // GET api/contacts
+        [HttpGet]
+        public async Task<IActionResult> GetContacts()
         {
-            return "value";
+            var Contacts = await _dataContext.Contacts.ToListAsync();
+            return Ok(Contacts);
+        }
+
+        // GET api/Contacts/5
+        [HttpGet("{id}")]
+        public  async Task<IActionResult> GetContact(int id)
+        {
+            var Contact = await _dataContext.Contacts.FirstOrDefaultAsync(x => x.Id ==id);
+            return Ok(Contact);
         }
 
         // POST api/values
