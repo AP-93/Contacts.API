@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Contacts.API.Data;
+using Contacts.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +15,7 @@ namespace Contacts.API.Controllers
         public ContactsController(DataContext dataContext)
         {
             _dataContext = dataContext;
+            DbTestDataInitializer.Initialize(_dataContext);
         }
 
         // GET api/contacts
@@ -30,7 +30,9 @@ namespace Contacts.API.Controllers
         [HttpGet("{id}")]
         public  async Task<IActionResult> GetContact(int id)
         {
-            var Contact = await _dataContext.Contacts.FirstOrDefaultAsync(x => x.Id ==id);
+            var Contact = await _dataContext.Contacts.Include(e => e.Emails)
+                                                     .Include(n =>n.PhoneNumbers)
+                                                     .AsNoTracking().FirstOrDefaultAsync(x => x.Id ==id);
             return Ok(Contact);
         }
 
@@ -38,6 +40,7 @@ namespace Contacts.API.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+            
         }
 
         // PUT api/values/5
@@ -50,6 +53,10 @@ namespace Contacts.API.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var Contact = _dataContext.Contacts.Include(e => e.Emails)
+                                                    .Include(n => n.PhoneNumbers)
+                                                    .FirstOrDefaultAsync(x => x.Id == id);
         }
+
     }
 }

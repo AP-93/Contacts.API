@@ -1,16 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+
+using System.Collections.Generic;
 
 namespace Contacts.API.Models
 {
     public class Contact
     {
-        [Key]
         public int Id { get; set; }
-
-        public string contactName { get; set; }
-
-        public string contactEmail { get; set; }
-
-        public string contactPhoneNum { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public ICollection<ContactEmail> Emails { get; set; }
+        public ICollection<ContactPhoneNum> PhoneNumbers { get; set; }
     }
 }
