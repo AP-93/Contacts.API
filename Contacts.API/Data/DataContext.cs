@@ -5,8 +5,7 @@ namespace Contacts.API.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions options) : base(options)
-        {    
+        public DataContext(DbContextOptions options) : base(options){    
         }
 
         public DbSet<Contact> Contacts { get; set; }

@@ -2,9 +2,9 @@
 {
     public class ContactPhoneNum
     {
-        public int Id { get; set; }
-        public string PhoneNum { get; set; }
+        public int id { get; set; }
+        public string phoneNum { get; set; }
         public Contact contact { get; set; }
-        public int ContactID { get; set; }
+        public int contactID { get; set; }
     }
 }

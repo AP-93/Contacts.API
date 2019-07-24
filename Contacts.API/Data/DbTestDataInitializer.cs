@@ -1,8 +1,5 @@
 ﻿using Contacts.API.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Contacts.API.Data
 {
@@ -19,14 +16,14 @@ namespace Contacts.API.Data
 
             var contacts = new Contact[]
             {
-            new Contact{FirstName="kontakt1",LastName="adaadadad"},
-            new Contact{FirstName="adwdadadaw",LastName="22222"},
-            new Contact{FirstName="bbbbbbbbbb",LastName="bbbbbbbbbbb"},
-            new Contact{FirstName="cccccccccc",LastName="ccccc"},
-            new Contact{FirstName="ddd",LastName="ddddddd"},
-            new Contact{FirstName="eeeeeee",LastName="eeeeeeeee"},
-            new Contact{FirstName="gffffffffff",LastName="fffffffffn"},
-            new Contact{FirstName="hhhhhh",LastName="hhhhhhh"}
+            new Contact{firstName="kontakt1",lastName="adaadadad"},
+            new Contact{firstName="adwdadadaw",lastName="22222"},
+            new Contact{firstName="bbbbbbbbbb",lastName="bbbbbbbbbbb"},
+            new Contact{firstName="cccccccccc",lastName="ccccc"},
+            new Contact{firstName="ddd",lastName="ddddddd"},
+            new Contact{firstName="eeeeeee",lastName="eeeeeeeee"},
+            new Contact{firstName="gffffffffff",lastName="fffffffffn"},
+            new Contact{firstName="hhhhhh",lastName="hhhhhhh"}
             };
             foreach (Contact c in contacts)
             {
@@ -36,21 +33,21 @@ namespace Contacts.API.Data
 
             var emails = new ContactEmail[]
             {
-            new ContactEmail{ContactID=1,Email="cad1emajl"},
-            new ContactEmail{ContactID=1,Email="opet1"},
-            new ContactEmail{ContactID=1,Email="adasda,dla11"},
-            new ContactEmail{ContactID=1,Email="cad1emajl"},
-            new ContactEmail{ContactID=1,Email="opet1"},
-            new ContactEmail{ContactID=1,Email="adasda,dla11"},
-            new ContactEmail{ContactID=2,Email="dfasdasd2222"},
-            new ContactEmail{ContactID=2,Email="asdadasd2222"},
-            new ContactEmail{ContactID=2,Email="fasdasdasdas2222"},
-            new ContactEmail{ContactID=3,Email="fasdasdasdas33333"},
-            new ContactEmail{ContactID=4,Email="fasdasdasdas44444"},
-            new ContactEmail{ContactID=4,Email="fasdasdasdas4444444"},
-            new ContactEmail{ContactID=5,Email="fasdasdasdas555"},
-            new ContactEmail{ContactID=6,Email="fasdasdasdas6666666"},
-            new ContactEmail{ContactID=7,Email="fasdasdasdas77777777"},
+            new ContactEmail{contactID=1,email="kon1majl@gmail.com"},
+            new ContactEmail{contactID=1,email="cad1kon1emajl@gmail.com"},
+            new ContactEmail{contactID=1,email="cadawdajl@gmail.com"},
+            new ContactEmail{contactID=1,email="awdawd1emajl@gmail.com"},
+            new ContactEmail{contactID=1,email="cwdadmajl@gmail.com"},
+            new ContactEmail{contactID=1,email="cadrfsasefajl@gmail.com"},
+            new ContactEmail{contactID=2,email="cwadajl@gmail.com"},
+            new ContactEmail{contactID=2,email="awdaw1emajl@gmail.com"},
+            new ContactEmail{contactID=2,email="bsefemajl@gmail.com"},
+            new ContactEmail{contactID=3,email="dawdmajl@gmail.com"},
+            new ContactEmail{contactID=4,email="awdawmajl@gmail.com"},
+            new ContactEmail{contactID=4,email="daajl@gmail.com"},
+            new ContactEmail{contactID=5,email="hdawdjl@gmail.com"},
+            new ContactEmail{contactID=6,email="tdhtrtgdrl@gmail.com"},
+            new ContactEmail{contactID=7,email="efsefcysdcjl@gmail.com"},
             };
             foreach (ContactEmail e in emails)
             {
@@ -58,21 +55,21 @@ namespace Contacts.API.Data
             }
             context.SaveChanges();
 
-
             var phoneNums = new ContactPhoneNum[]
-            {
-            new ContactPhoneNum{ContactID=1,PhoneNum="11111111"},
-            new ContactPhoneNum{ContactID=1,PhoneNum="o1111111111"},
-            new ContactPhoneNum{ContactID=1,PhoneNum="11111111111111111"},
-            new ContactPhoneNum{ContactID=2,PhoneNum="2222222222222222"},
-            new ContactPhoneNum{ContactID=2,PhoneNum="222222222222222222"},
-            new ContactPhoneNum{ContactID=2,PhoneNum="22222222222222222"},
-            new ContactPhoneNum{ContactID=3,PhoneNum="333333333333333333333"},
-            new ContactPhoneNum{ContactID=4,PhoneNum="44444444444444444"},
-            new ContactPhoneNum{ContactID=4,PhoneNum="44444444444444444444"},
-            new ContactPhoneNum{ContactID=5,PhoneNum="555555555555555"},
-            new ContactPhoneNum{ContactID=6,PhoneNum="6666666"},
-            new ContactPhoneNum{ContactID=7,PhoneNum="77777777"},
+            {                               
+            new ContactPhoneNum{contactID=1,phoneNum="11111111"},
+            new ContactPhoneNum{contactID=1,phoneNum="1111111111"},
+            new ContactPhoneNum{contactID=1,phoneNum="11111111111111111"},
+            new ContactPhoneNum{contactID=2,phoneNum="2222222222222222"},
+            new ContactPhoneNum{contactID=2,phoneNum="222222222222222222"},
+            new ContactPhoneNum{contactID=2,phoneNum="22222222222222222"},
+            new ContactPhoneNum{contactID=3,phoneNum="333333333333333333333"},
+            new ContactPhoneNum{contactID=4,phoneNum="44444444444444444"},
+            new ContactPhoneNum{contactID=4,phoneNum="44444444444444444444"},
+            new ContactPhoneNum{contactID=5,phoneNum="555555555555555"},
+            new ContactPhoneNum{contactID=6,phoneNum="6666666"},
+            new ContactPhoneNum{contactID=7,phoneNum="77777777"},
+            new ContactPhoneNum{contactID=7,phoneNum="888888888"},
             }; 
             foreach (ContactPhoneNum n in phoneNums)
             {
